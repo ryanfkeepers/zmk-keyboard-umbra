@@ -274,26 +274,36 @@
     combos {
         compatible = "zmk,combos";
 
+        // ZMK combo key-positions are indices into the matrix-transform
+        // map in umbra.overlay (RC(0,0)..RC(0,23)), which equals the
+        // reading order of bindings in each layer. They are NOT the
+        // KMK/universal GPIO-labeled positions shown in the header
+        // diagram. See the index->GPIO table at the bottom of this file.
+
+        // top row: left index-inner + right pinky
         caps_word {
             bindings = <&caps_word>;
-            key-positions = <4 21>;
+            key-positions = <4 9>;
             require-prior-idle-ms = <500>;
         };
 
+        // top row: right index + right ring
         ret {
             bindings = <&kp RET>;
-            key-positions = <22 27>;
+            key-positions = <6 8>;
             timeout-ms = <200>;
             require-prior-idle-ms = <250>;
         };
 
+        // home row: right index + right middle
         bksp {
             bindings = <&kp BACKSPACE>;
-            key-positions = <20 19>;
+            key-positions = <14 15>;
             timeout-ms = <200>;
             require-prior-idle-ms = <200>;
         };
 
+        // top row: left ring + left index
         esc {
             bindings = <&kp ESC>;
             key-positions = <1 3>;
