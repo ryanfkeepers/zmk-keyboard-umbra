@@ -1,0 +1,8 @@
+file_format: "1"
+id: umbra
+name: Umbra
+type: shield
+url: https://github.com/skarrmann/umbra
+requires: [pico_header]
+features:
+  - keys
