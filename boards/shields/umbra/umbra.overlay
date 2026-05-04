@@ -23,7 +23,6 @@
     
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
 
         /* Pin mapping mirrors the canonical KMK config from
          * https://github.com/skarrmann/umbra/blob/main/firmware/kmk/kb.py
@@ -70,3 +69,13 @@
         zmk,physical_layout = &physical_layout_main;
     };
 };
+
+/* Free the GPIOs that the rp2040_plus board enables for peripherals
+ * but the umbra wires up as direct kscan inputs.
+ *   i2c0 -> GP4 (SDA), GP5 (SCL)
+ *   spi0 -> GP16, GP17, GP18, GP19
+ *   adc  -> GP26, GP27, GP28, GP29 (via adc_default pinctrl)
+ */
+&i2c0 { status = "disabled"; };
+&spi0 { status = "disabled"; };
+&adc  { status = "disabled"; };
