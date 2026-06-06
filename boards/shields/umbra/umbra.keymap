@@ -63,6 +63,15 @@
             flavor = "tap-preferred";
         };
 
+        // hold for gh, tap for kp
+        ht_ck: ht_gh {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&g_h>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
         // hold for ck, tap for kp
         ht_ck: ht_ck {
             compatible = "zmk,behavior-hold-tap";
@@ -372,7 +381,18 @@
                 , <&kp G>;
         };
 
-        // qu
+        // gh
+        g_h: g_h {
+            label = "&G_H";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp G>
+                , <&kp H>;
+        };
+
+        // ck
         c_k: c_k {
             label = "&C_K";
             compatible = "zmk,behavior-macro";
@@ -694,7 +714,7 @@
         ALPHA {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   w   m   d   l   _ │      │  _   i   o   u   b  │
+ *  │   m   p   d   l   _ │      │  _   i   o   u   b  │
  *  │   s   c   t   r     │      │      e   a   h  A2  │
  *  ╰────────╮  _   n   ' │      │ shf spc  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
@@ -702,8 +722,8 @@
             display-name = "Alphabet";
 
             bindings = <
- &kp W &ht_mp 0 M &kp D &ht_ly 0 L &none /* */ &none &ht_ing 0 I &ht_you 0 O &ht_qu 0 U &ht_by 0 B
- &ht LCTRL S &ht_ck 0 C &ht_ty 0 T &ht_ry 0 R /* */ &ht_ye 0 E &ht_ay 0 A &kp H &sl ALPHA2
+ &kp M &ht_mp 0 P &kp D &ht_ly 0 L &none /* */ &none &ht_ing 0 I &ht_you 0 O &ht_qu 0 U &ht_by 0 B
+ &ht LCTRL S &ht_ck 0 C &ht_ty 0 T &ht_ry 0 R /* */ &ht_ye 0 E &ht_ay 0 A &ht_gh 0 H &sl ALPHA2
  &none &lt SYM N &ht_npi GRAVE SQT /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
             >;
 
@@ -713,17 +733,17 @@
         ALPHA2 {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _   z   k   j   _ │      │  _   y   x   q   _  │
- *  │ .hs   p   f   g     │      │      ,   .   v   _  │
- *  ╰────────╮  _  gui  _ │      │ shf alt  _ ╭────────╯
+ *  │ .hs   j   k   q   _ │      │  _   z   x   _   _  │
+ *  │   _   y   f   g     │      │      ,   .   v   _  │
+ *  ╰────────╮  _   w gui │      │ shf alt  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
             display-name = "Alphabet2";
 
             bindings = <
- &none &kp Z &ht_ok 0 K &ht_jj 0 J &none /* */ &none &ht_you 0 Y &ht_xp 0 X &kp Q &none
- &sk LC(LA(LG(LSHFT))) &ht_sp 0 P &ht_fl 0 F &ht_gr 0 G /* */ &ht_npi LS(N1) COMMA &ht_npi LS(FSLH) DOT &kp V &trans
- &none &kp LGUI &none /* */ &kp RSHFT &kp RALT &none
+ &sk LC(LA(LG(LSHFT))) &ht_jj 0 J &ht_ok 0 K &kp Q &none /* */ &none &kp Z &ht_xp 0 X &none &none
+ &none &kp Y &ht_fl 0 F &ht_gr 0 G /* */ &ht_npi LS(N1) COMMA &ht_npi LS(FSLH) DOT &kp V &trans
+ &none &kp W &kp LGUI /* */ &kp RSHFT &kp RALT &none
             >;
 
             label = "Alphabet2";
@@ -776,7 +796,7 @@
  *           ╰────────────╯      ╰────────────╯
  */
             bindings = <
- &none &kp MINUS &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
+ &none &kp LA(LS(MINUS)) &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
  &none &none &nvim_win_l &nvim_win_dn /* */ &nvim_win_up &nvim_win_r &none &none
  &none &none &none /* */ &none &none &none
             >;
