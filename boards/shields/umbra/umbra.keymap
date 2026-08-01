@@ -145,7 +145,7 @@
         };
 
         // hold for dy, tap for kp
-        ht_ty: ht_dy {
+        ht_dy: ht_dy {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
