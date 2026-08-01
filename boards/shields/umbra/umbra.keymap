@@ -589,7 +589,7 @@
  */
             bindings = <
  &none &kp LA(LS(MINUS)) &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
- &sk LC(LA(LG(LSHFT))) &none &nvim_win_l &nvim_win_dn /* */ &nvim_win_up &nvim_win_r &none &none
+ &sk LC(LA(LG(LSHFT))) &none &nvim_win_left &nvim_win_dn /* */ &nvim_win_up &nvim_win_right &none &none
  &none &none &none /* */ &none &none &none
             >;
 
