@@ -181,7 +181,7 @@
         };
 
         // hold for ey, tap for kp
-        ht_ye: ht_ey {
+        ht_ey: ht_ey {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
