@@ -552,7 +552,7 @@
             display-name = "SymNum";
 
             bindings = <
- &trans &ht_npi N8 N3 &ht_npi N7 N2 &ht_npi N6 N1 &trans /* */ &trans &ht DEL LA(BSPC) &ht_npi LS(SEMI) SEMI &ht LS(MINUS) MINUS &trans
+ &trans &ht_npi N8 N3 &ht_npi N7 N2 &ht_npi N6 N1 &trans /* */ &trans &ht DEL BSPC &ht_npi LS(SEMI) SEMI &ht LS(MINUS) MINUS &trans
  &mt LS(N5) N5 &kp TAB &ht_npi N9 N4 &mt LS(EQUAL) EQUAL /* */ &ht_npi LBKT LS(N9) &ht_npi RBKT LS(N0) &ht_npi BSLH FSLH &kp N0
  &none &trans &trans /* */ &kp RSHFT &kp RALT &none
             >;
