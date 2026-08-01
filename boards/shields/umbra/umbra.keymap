@@ -571,8 +571,8 @@
             display-name = "VimNav";
 
             bindings = <
- &spacefq &sk LALT &sk LSHFT &sk LGUI &trans /* */ &trans &ht_npi H LEFT &ht_npi J DOWN &ht_npi K UP &trans
- &spacefw &kp LS(LG(LBKT)) &kp LG(LS(SPACE)) &kp LS(RG(RBKT)) /* */ &kp LS(N5) &kp LC(D) &kp LC(U) &ht_npi L RIGHT
+ &none &sk LALT &sk LSHFT &sk LGUI &trans /* */ &trans &ht_npi H LEFT &ht_npi J DOWN &ht_npi K UP &trans
+ &none &kp LS(LG(LBKT)) &kp LG(LS(SPACE)) &kp LS(RG(RBKT)) /* */ &kp LS(N5) &kp LC(D) &kp LC(U) &ht_npi L RIGHT
  &none &mo WIN &trans /* */ &trans &trans &none
             >;
 
