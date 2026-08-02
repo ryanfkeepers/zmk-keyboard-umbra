@@ -250,7 +250,7 @@
         // home row: left pinky + left pointer
         win_left {
             bindings = <&nvim_win_left>;
-            key-positions = <10 13>;
+            key-positions = <0 13>;
             timeout-ms = <50>;
             require-prior-idle-ms = <250>;
         };
@@ -258,7 +258,7 @@
         // home row: left pinky + left ring
         win_dn {
             bindings = <&nvim_win_dn>;
-            key-positions = <10 11>;
+            key-positions = <0 12>;
             timeout-ms = <50>;
             require-prior-idle-ms = <250>;
         };
@@ -266,7 +266,7 @@
         // home row: right pinky + right right
         win_up {
             bindings = <&nvim_win_up>;
-            key-positions = <16 17>;
+            key-positions = <15 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <250>;
         };
@@ -274,7 +274,7 @@
         // home row: right pinky + right pointer
         win_right {
             bindings = <&nvim_win_right>;
-            key-positions = <14 17>;
+            key-positions = <14 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <250>;
         };
@@ -506,16 +506,16 @@
         ALPHA {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _   c   t   r   _ │      │  _   e   a   h   _  │
- *  │   s   p   d   l     │      │      i   o   u  A2  │
+ *  │   s   c   t   r   _ │      │  _   e   a   h  A2  │
+ *  │   _   p   d   l     │      │      i   o   u    _ │
  *  ╰────────╮  _   n   ' │      │ shf spc  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
             display-name = "Alphabet";
 
             bindings = <
- &none &ht_ck 0 C &ht_ty 0 T &ht_ry 0 R &none /* */ &none &ht_ye 0 E &ht_ay 0 A &ht_gh 0 H &none
- &ht LCTRL S &ht_mp 0 P &ht_dy 0 D &ht_ly 0 L /* */ &ht_ing 0 I &ht_you 0 O &ht_qu 0 U &sl ALPHA2
+ &ht LCTRL S &ht_ck 0 C &ht_ty 0 T &ht_ry 0 R &none /* */ &none &ht_ye 0 E &ht_ay 0 A &ht_gh 0 H &sl ALPHA2
+ &none &ht_mp 0 P &ht_dy 0 D &ht_ly 0 L /* */ &ht_ing 0 I &ht_you 0 O &ht_qu 0 U &none
  &none &lt SYM N &ht_npi GRAVE SQT /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
             >;
 
@@ -525,16 +525,16 @@
         ALPHA2 {
 /*
  *  ╭────────────────────╮      ╭─────────────────────╮
- *  │  _   b   m   f   _ │      │  _   ,   .   v   _  │
- *  │  q   _   x   _     │      │      _   z   _   _  │
+ *  │  q   b   m   f   _ │      │  _   ,   .   v   _  │
+ *  │  _   _   x   _     │      │      _   z   _   _  │
  *  ╰───────╮  _   j gui │      │ shf alt  _ ╭────────╯
  *          ╰────────────╯      ╰────────────╯
  */
             display-name = "Alphabet2";
 
             bindings = <
- &none &kp B &kp M &kp F &none /* */ &none &ht_npi LS(N1) COMMA &ht_npi LS(FSLH) DOT &kp V &none
- &kp Q &none &kp X &none /* */ &none &kp Z &none &trans
+ &kp Q &kp B &kp M &kp F &none /* */ &none &ht_npi LS(N1) COMMA &ht_npi LS(FSLH) DOT &kp V &none
+ &none &none &kp X &none /* */ &none &kp Z &none &trans
  &none &ht_jj 0 J &kp LGUI /* */ &kp RSHFT &kp RALT &none
             >;
 
@@ -544,16 +544,16 @@
         SYMNUM {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _  38  27  16   _ │      │  _  b/d  ;   -   _  │
- *  │   5  tab 49   =     │      │      (   )   /   0  │
+ *  │   5  38  27  16   _ │      │  _  b/d  ;   -   0  │
+ *  │   _  tab 49   =     │      │      (   )   /   _  │
  *  ╰────────╮  _   _   _ │      │ shf alt  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
             display-name = "SymNum";
 
             bindings = <
- &trans &ht_npi N8 N3 &ht_npi N7 N2 &ht_npi N6 N1 &trans /* */ &trans &ht DEL BSPC &ht_npi LS(SEMI) SEMI &ht LS(MINUS) MINUS &trans
- &mt LS(N5) N5 &kp TAB &ht_npi N9 N4 &mt LS(EQUAL) EQUAL /* */ &ht_npi LBKT LS(N9) &ht_npi RBKT LS(N0) &ht_npi BSLH FSLH &kp N0
+ &mt LS(N5) N5 &ht_npi N8 N3 &ht_npi N7 N2 &ht_npi N6 N1 &trans /* */ &trans &ht DEL BSPC &ht_npi LS(SEMI) SEMI &ht LS(MINUS) MINUS &kp N0
+ &trans &kp TAB &ht_npi N9 N4 &mt LS(EQUAL) EQUAL /* */ &ht_npi LBKT LS(N9) &ht_npi RBKT LS(N0) &ht_npi BSLH FSLH &trans
  &none &trans &trans /* */ &kp RSHFT &kp RALT &none
             >;
 
@@ -563,16 +563,16 @@
         VIMNAV {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │ _  alt shf gui   _  │      │  _  h   j   k    _  │
- *  │ _   .[  ._  .]      │      │     %  pdn pup   l  │
+ *  │ _  alt shf gui   _  │      │  _  h   j   k   l  │
+ *  │ _   .[  ._  .]      │      │     %  pdn pup  _  │
  *  ╰────────╮  _ WIN  _  │      │  _   _   _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
             display-name = "VimNav";
 
             bindings = <
- &none &sk LALT &sk LSHFT &sk LGUI &trans /* */ &trans &ht_npi H LEFT &ht_npi J DOWN &ht_npi K UP &trans
- &none &kp LS(LG(LBKT)) &kp LG(LS(SPACE)) &kp LS(RG(RBKT)) /* */ &kp LS(N5) &kp LC(D) &kp LC(U) &ht_npi L RIGHT
+ &none &sk LALT &sk LSHFT &sk LGUI &trans /* */ &trans &ht_npi H LEFT &ht_npi J DOWN &ht_npi K UP &ht_npi L RIGHT
+ &none &kp LS(LG(LBKT)) &kp LG(LS(SPACE)) &kp LS(RG(RBKT)) /* */ &kp LS(N5) &kp LC(D) &kp LC(U) &trans
  &none &mo WIN &trans /* */ &trans &trans &none
             >;
 
@@ -582,14 +582,14 @@
         Window {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _  .-  .h  .j   _ │      │  _  .k  .l  .+   _  │
- *  │ hypr  _  :h  :j     │      │     :k  :l   _   _  │
+ *  │ hypr .-  .h  .j   _ │      │  _  .k  .l  .+   _  │
+ *  │   _   _  :h  :j     │      │     :k  :l   _   _  │
  *  ╰────────╮  _   _   _ │      │  _   _   _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
             bindings = <
- &none &kp LA(LS(MINUS)) &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
- &sk LC(LA(LG(LSHFT))) &none &nvim_win_left &nvim_win_dn /* */ &nvim_win_up &nvim_win_right &none &none
+ &sk LC(LA(LG(LSHFT))) &kp LA(LS(MINUS)) &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
+ &none &none &nvim_win_left &nvim_win_dn /* */ &nvim_win_up &nvim_win_right &none &none
  &none &none &none /* */ &none &none &none
             >;
 
