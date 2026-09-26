@@ -301,18 +301,6 @@
                 , <&kp U>;
         };
 
-        // ing
-        i_n_g: i_n_g {
-            label = "&I_N_G";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp I>
-                , <&kp N>
-                , <&kp G>;
-        };
-
         // ck
         c_k: c_k {
             label = "&C_K";
@@ -383,26 +371,15 @@
                 , <&kp L>;
         };
 
-        // nc
-        n_c: n_c {
-            label = "&N_C";
+        // pr
+        p_r: p_r {
+            label = "&P_R";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
-            bindings = <&kp N>
-                , <&kp C>;
-        };
-
-        // bl
-        b_l: b_l {
-            label = "&B_L";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp B>
-                , <&kp L>;
+            bindings = <&kp P>
+                , <&kp R>;
         };
 
         // you
@@ -428,26 +405,15 @@
                 , <&kp Y>;
         };
 
-        // ye
-        y_e: y_e {
-            label = "&Y_E";
+        // nd
+        n_d: n_d {
+            label = "&N_D";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
-            bindings = <&kp Y>
-                , <&kp E>;
-        };
-
-        // gh
-        g_h: g_h {
-            label = "&G_H";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp G>
-                , <&kp H>;
+            bindings = <&kp N>
+                , <&kp D>;
         };
 
         // wh
@@ -494,28 +460,6 @@
                 , <&kp M>;
         };
 
-        // sh
-        s_h: s_h {
-            label = "&S_H";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp S>
-                , <&kp H>;
-        };
-
-        // pr
-        p_r: p_r {
-            label = "&P_R";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp P>
-                , <&kp R>;
-        };
-
         // ng
         n_g: n_g {
             label = "&N_G";
@@ -527,26 +471,16 @@
                 , <&kp G>;
         };
 
-        // ct
-        c_t: c_t {
-            label = "&C_T";
+        // ing
+        i_n_g: i_n_g {
+            label = "&I_N_G";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
-            bindings = <&kp C>
-                , <&kp T>;
-        };
-
-        // hi
-        h_i: h_i {
-            label = "&H_I";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp H>
-                , <&kp I>;
+            bindings = <&kp I>
+                , <&kp N>
+                , <&kp G>;
         };
 
         // ch
@@ -560,15 +494,37 @@
                 , <&kp H>;
         };
 
-        // nd
-        n_d: n_d {
-            label = "&N_D";
+        // th
+        t_h: t_h {
+            label = "&T_H";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
-            bindings = <&kp N>
-                , <&kp D>;
+            bindings = <&kp T>
+                , <&kp H>;
+        };
+
+        // he
+        h_e: h_e {
+            label = "&H_E";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp H>
+                , <&kp E>;
+        };
+
+        // bl
+        b_l: b_l {
+            label = "&B_L";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp B>
+                , <&kp L>;
         };
     };
 
