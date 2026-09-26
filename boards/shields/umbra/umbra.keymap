@@ -544,7 +544,7 @@
             bindings = <
  &none &ht_ch 0 C  &ht_ch 0 D  &ht_ck 0 L &none /* */ &none &ht_npi SQT F  &ht_you 0 O   &ht_qu 0 U &none
  &ht LCTRL S  &ht_nd 0 N  &ht_th 0 T  &ht_ng 0 R /* */ &ht_he 0 E   &ht_ay 0 A  &ht_ing 0 I  &sl ALPHA2
- &none &layer SYM  &layer NUM /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
+ &none &mo SYM  &mo NUM /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
             >;
 
             label = "Alphabet";
