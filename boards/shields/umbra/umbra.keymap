@@ -30,11 +30,17 @@
 #define DEF 0
 #define ALPHA2 1
 #define SYM 2
-#define NAV 3
-#define WIN 4
+#define NUM 3
+#define NAV 4
+#define WIN 5
 
 / {
     behaviors {
+
+        // Layer tap dance behaviors
+
+        ZMK_TD_LAYER(td_LAYER_Sym, SYM)
+        ZMK_TD_LAYER(td_LAYER_Num, NUM)
 
         // hold for qu, tap for kp
         ht_qu: ht_qu {
@@ -63,24 +69,6 @@
             flavor = "tap-preferred";
         };
 
-        // hold for ing, tap for kp
-        ht_ing: ht_ing {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&i_n_g>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for gh, tap for kp
-        ht_gh: ht_gh {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&g_h>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
         // hold for ck, tap for kp
         ht_ck: ht_ck {
             compatible = "zmk,behavior-hold-tap";
@@ -90,66 +78,12 @@
             flavor = "tap-preferred";
         };
 
-        // hold for mp, tap for kp
-        ht_mp: ht_mp {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&m_p>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for ly, tap for kp
-        ht_ly: ht_ly {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&l_y>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for ry, tap for kp
-        ht_ry: ht_ry {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&r_y>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
         // hold for jj, tap for kp
         ht_jj: ht_jj {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings = <&j_j>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for by, tap for kp
-        ht_by: ht_by {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&b_y>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for ty, tap for kp
-        ht_ty: ht_ty {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&t_y>, <&kp>;
-            flavor = "tap-preferred";
-        };
-
-        // hold for dy, tap for kp
-        ht_dy: ht_dy {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&d_y>, <&kp>;
             flavor = "tap-preferred";
         };
 
@@ -171,12 +105,30 @@
             flavor = "tap-preferred";
         };
 
-        // hold for ye, tap for kp
-        ht_ye: ht_ye {
+        // hold for nd, tap for kp
+        ht_nd: ht_nd {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&y_e>, <&kp>;
+            bindings = <&n_d>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for wh, tap for kp
+        ht_wh: ht_wh {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&w_h>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for 's, tap for kp
+        ht_aposs: ht_aposs {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&apos_s>, <&kp>;
             flavor = "tap-preferred";
         };
 
@@ -186,6 +138,88 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings = <&e_y>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for pr, tap for kp
+        ht_pr: ht_pr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&p_r>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for rm, tap for kp
+        ht_rm: ht_rm {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&r_m>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold tap, long prior idle
+        ht_long: ht_long {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <5000>;
+        };
+
+        // hold for ng, tap for kp
+        ht_ng: ht_ng {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&n_g>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for ing, tap for kp
+        ht_ing: ht_ing {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&i_n_g>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for ch, tap for kp
+        ht_ch: ht_ch {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&c_h>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for th, tap for kp
+        ht_th: ht_th {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&t_h>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for he, tap for kp
+        ht_he: ht_he {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&h_e>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
+        // hold for bl, tap for kp
+        ht_bl: ht_bl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&b_l>, <&kp>;
             flavor = "tap-preferred";
         };
     };
@@ -207,74 +241,54 @@
  *              ╰────────────╯                  ╰────────────╯
  */
 
-        /* ret { */
-        /*     bindings = <&kp RET>; */
-        /*     key-positions = <14 16>; */
-        /*     timeout-ms = <200>; */
-        /*     require-prior-idle-ms = <250>; */
-        /* }; */
-
-        /* esc { */
-        /*     bindings = <&kp ESC>; */
-        /*     key-positions = <11 13>; */
-        /*     timeout-ms = <200>; */
-        /*     require-prior-idle-ms = <250>; */
-        /* }; */
-
-        whai {
-            bindings = <&ht_ey 0 Y>;
+        // y
+        combo_whai {
+            timeout-ms = <50>;
             key-positions = <14 15>;
-            timeout-ms = <50>;
+            bindings = <&ht_ey 0 Y>;
+            layers = <LAYER_Alpha>;
             require-prior-idle-ms = <50>;
         };
 
-        kay {
-            bindings = <&kp K>;
-            key-positions = <11 13>;
+        // w
+        combo_doubleeew {
             timeout-ms = <50>;
-            require-prior-idle-ms = <50>;
-        };
-
-        gee {
-            bindings = <&kp G>;
             key-positions = <12 13>;
-            timeout-ms = <50>;
+            bindings = <&ht_wh 0 W>;
+            layers = <LAYER_Alpha>;
             require-prior-idle-ms = <50>;
         };
 
-        doubleewe {
-            bindings = <&kp W>;
-            key-positions = <11 12>;
+        combo_win_u {
             timeout-ms = <50>;
-            require-prior-idle-ms = <50>;
-        };
-
-        win_left {
-            bindings = <&nvim_win_left>;
-            key-positions = <1 3>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <250>;
-        };
-
-        win_dn {
-            bindings = <&nvim_win_dn>;
-            key-positions = <1 2>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <250>;
-        };
-
-        win_up {
+            key-positions = <8 17>;
             bindings = <&nvim_win_up>;
-            key-positions = <7 8>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <250>;
+            layers = <LAYER_Alpha>;
+            require-prior-idle-ms = <350>;
         };
 
-        win_right {
-            bindings = <&nvim_win_right>;
-            key-positions = <6 8>;
+        combo_win_r {
             timeout-ms = <50>;
-            require-prior-idle-ms = <250>;
+            key-positions = <6 17>;
+            bindings = <&nvim_win_r>;
+            layers = <LAYER_Alpha>;
+            require-prior-idle-ms = <350>;
+        };
+
+        combo_win_l {
+            timeout-ms = <50>;
+            key-positions = <10 3>;
+            bindings = <&nvim_win_l>;
+            layers = <LAYER_Alpha>;
+            require-prior-idle-ms = <350>;
+        };
+
+        combo_win_d {
+            timeout-ms = <50>;
+            key-positions = <10 1>;
+            bindings = <&nvim_win_dn>;
+            layers = <LAYER_Alpha>;
+            require-prior-idle-ms = <350>;
         };
     };
 
@@ -282,9 +296,54 @@
 
     macros {
 
+        // qu
+        q_u: q_u {
+            label = "&Q_U";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp Q>
+                , <&kp U>;
+        };
+
+        // ing
+        i_n_g: i_n_g {
+            label = "&I_N_G";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp I>
+                , <&kp N>
+                , <&kp G>;
+        };
+
+        // ck
+        c_k: c_k {
+            label = "&C_K";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp C>
+                , <&kp K>;
+        };
+
+        // jj
+        j_j: j_j {
+            label = "&J_J";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp J>
+                , <&kp J>;
+        };
+
         // _wh
-        nvim_win_left: nvim_win_left {
-            label = "&NVIM_WIN_LEFT";
+        nvim_win_l: nvim_win_l {
+            label = "&NVIM_WIN_L";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <15>;
@@ -319,8 +378,8 @@
         };
 
         // _wl
-        nvim_win_right: nvim_win_right {
-            label = "&NVIM_WIN_RIGHT";
+        nvim_win_r: nvim_win_r {
+            label = "&NVIM_WIN_R";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <15>;
@@ -330,115 +389,26 @@
                 , <&kp L>;
         };
 
-        // qu
-        q_u: q_u {
-            label = "&Q_U";
+        // nc
+        n_c: n_c {
+            label = "&N_C";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
-            bindings = <&kp Q>
-                , <&kp U>;
+            bindings = <&kp N>
+                , <&kp C>;
         };
 
-        // ing
-        i_n_g: i_n_g {
-            label = "&I_N_G";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp I>
-                , <&kp N>
-                , <&kp G>;
-        };
-
-        // gh
-        g_h: g_h {
-            label = "&G_H";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp G>
-                , <&kp H>;
-        };
-
-        // ck
-        c_k: c_k {
-            label = "&C_K";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp C>
-                , <&kp K>;
-        };
-
-        // jj
-        j_j: j_j {
-            label = "&J_J";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp J>
-                , <&kp J>;
-        };
-
-        // ly
-        l_y: l_y {
-            label = "&L_Y";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp L>
-                , <&kp Y>;
-        };
-
-        // mp
-        m_p: m_p {
-            label = "&M_P";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp M>
-                , <&kp P>;
-        };
-
-        // ry
-        r_y: r_y {
-            label = "&R_Y";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp R>
-                , <&kp Y>;
-        };
-
-        // by
-        b_y: b_y {
-            label = "&B_Y";
+        // bl
+        b_l: b_l {
+            label = "&B_L";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <5>;
             wait-ms = <5>;
             bindings = <&kp B>
-                , <&kp Y>;
-        };
-
-        // ty
-        t_y: t_y {
-            label = "&T_Y";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp T>
-                , <&kp Y>;
+                , <&kp L>;
         };
 
         // you
@@ -464,17 +434,6 @@
                 , <&kp Y>;
         };
 
-        // dy
-        d_y: d_y {
-            label = "&D_Y";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <5>;
-            wait-ms = <5>;
-            bindings = <&kp D>
-                , <&kp Y>;
-        };
-
         // ye
         y_e: y_e {
             label = "&Y_E";
@@ -484,6 +443,39 @@
             wait-ms = <5>;
             bindings = <&kp Y>
                 , <&kp E>;
+        };
+
+        // gh
+        g_h: g_h {
+            label = "&G_H";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp G>
+                , <&kp H>;
+        };
+
+        // wh
+        w_h: w_h {
+            label = "&W_H";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp W>
+                , <&kp H>;
+        };
+
+        // 's
+        apos_s: apos_s {
+            label = "&APOS_S";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp SQT>
+                , <&kp S>;
         };
 
         // ey
@@ -496,6 +488,94 @@
             bindings = <&kp E>
                 , <&kp Y>;
         };
+
+        // rm
+        r_m: r_m {
+            label = "&R_M";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp R>
+                , <&kp M>;
+        };
+
+        // sh
+        s_h: s_h {
+            label = "&S_H";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp S>
+                , <&kp H>;
+        };
+
+        // pr
+        p_r: p_r {
+            label = "&P_R";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp P>
+                , <&kp R>;
+        };
+
+        // ng
+        n_g: n_g {
+            label = "&N_G";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp N>
+                , <&kp G>;
+        };
+
+        // ct
+        c_t: c_t {
+            label = "&C_T";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp C>
+                , <&kp T>;
+        };
+
+        // hi
+        h_i: h_i {
+            label = "&H_I";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp H>
+                , <&kp I>;
+        };
+
+        // ch
+        c_h: c_h {
+            label = "&C_H";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp C>
+                , <&kp H>;
+        };
+
+        // nd
+        n_d: n_d {
+            label = "&N_D";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <5>;
+            wait-ms = <5>;
+            bindings = <&kp N>
+                , <&kp D>;
+        };
     };
 
     keymap {
@@ -503,18 +583,18 @@
 
         ALPHA {
 /*
- *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _   p   d   l   _ │      │  _   i   o   u   _  │
- *  │   s   c   t   r     │      │      e   a   h  A2  │
- *  ╰────────╮  _   n   ' │      │ shf spc  _ ╭────────╯
- *           ╰────────────╯      ╰────────────╯
+ *  ╭──────────────────────╮      ╭─────────────────────╮
+ *  │   _   c   d   l    _ │      │  _   f   o   u   _  │
+ *  │   s   n   t   r      │      │      e   a   i  A2  │
+ *  ╰────────╮  _  sym num │      │ shf spc  _ ╭────────╯
+ *           ╰─────────────╯      ╰────────────╯
  */
             display-name = "Alphabet";
 
             bindings = <
- &none &ht_mp 0 P &ht_dy 0 D &ht_ly 0 L &none /* */ &none &ht_ing 0 I &ht_you 0 O &ht_qu 0 U &none
- &ht LCTRL S &ht_ck 0 C &ht_ty 0 T &ht_ry 0 R /* */ &ht_ye 0 E &ht_ay 0 A &ht_gh 0 H &sl ALPHA2
- &none &lt SYM N &ht_npi GRAVE SQT /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
+ &none &ht_ch 0 C  &ht_ch 0 D  &ht_ck 0 L &none /* */ &none &ht_npi SQT F  &ht_you 0 O   &ht_qu 0 U &none
+ &ht LCTRL S  &ht_nd 0 N  &ht_th 0 T  &ht_ng 0 R /* */ &ht_he 0 E   &ht_ay 0 A  &ht_ing 0 I  &sl ALPHA2
+ &none &layer SYM  &layer NUM /* */ &sk RIGHT_SHIFT &lt NAV SPACE &none
             >;
 
             label = "Alphabet";
@@ -523,39 +603,58 @@
         ALPHA2 {
 /*
  *  ╭────────────────────╮      ╭─────────────────────╮
- *  │  _   _   x  esc  _ │      │  _  ret  z   _   _  │
- *  │  q   b   m   f     │      │      ,   .   v   _  │
+ *  │  _   z   x   k  _  │      │  _   ,   .   _   _  │
+ *  │  q   b   m   f     │      │      h   v   g   _  │
  *  ╰───────╮  _   j gui │      │ shf alt  _ ╭────────╯
  *          ╰────────────╯      ╰────────────╯
  */
-            display-name = "Alphabet2";
+            display-name = "Alphabet-2";
 
             bindings = <
- &none &none &kp X &kp ESC &none /* */ &none &kp RET &kp Z &none &none
- &kp Q &kp B &kp M &kp F /* */ &ht_npi LS(N1) COMMA &ht_npi LS(FSLH) DOT &kp V &trans
+ &none &ht LG(Z) Z  &ht LG(X) X  &ht_ck 0 K &none /* */ &none &kp COMMA &kp DOT  &ht_npi BSLH FSLH &none
+ &ht_aposs 0 Q   &ht_bl 0 B   &ht_rm 0 M  &ht_pr 0 P /* */ &ht_npi LS(N1) H  &ht_npi LS(FSLH) V    &ht_npi GRAVE G &trans
  &none &ht_jj 0 J &kp LGUI /* */ &kp RSHFT &kp RALT &none
             >;
 
             label = "Alphabet2";
         };
 
-        SYMNUM {
+        SYM {
 /*
  *  ╭─────────────────────╮      ╭─────────────────────╮
- *  │   _  tab 49   =   _ │      │  _  b/d  ;   -   _  │
- *  │   5  38  27  16     │      │      (   )   /   0  │
+ *  │   _   =   -  ret  _ │      │  _   (   )   ;   _  │
+ *  │  ctr alt sft gui    │      │     bks del esc tab │
  *  ╰────────╮  _   _   _ │      │ shf alt  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
-            display-name = "SymNum";
+            display-name = "Sym";
 
             bindings = <
- &trans &kp TAB &ht_npi N9 N4 &mt LS(EQUAL) EQUAL &trans /* */ &trans &ht DEL BSPC &ht_npi LS(SEMI) SEMI &ht LS(MINUS) MINUS &trans
- &mt LS(N5) N5 &ht_npi N8 N3 &ht_npi N7 N2 &ht_npi N6 N1 /* */ &ht_npi LBKT LS(N9) &ht_npi RBKT LS(N0) &ht_npi BSLH FSLH &kp N0
+ &trans &ht_npi LS(EQUAL) EQUAL  &ht_npi LS(MINUS) MINUS   &kp RET &trans /* */ &trans &ht_npi LBKT LS(N9)  &ht_npi RBKT LS(N0)  &ht_npi LS(SEMI) SEMI &trans
+ &sk LCTRL &sk LALT &sk LSHFT  &sk LGUI /* */ &kp BSPC &kp DEL &kp ESC  &kp TAB
  &none &trans &trans /* */ &kp RSHFT &kp RALT &none
             >;
 
-            label = "SymNum";
+            label = "Sym";
+        };
+
+        NUM {
+/*
+ *  ╭───────────────────╮      ╭─────────────────╮
+ *  │   _  f11 5  4   _ │      │  _   9  0 f12 _ │
+ *  │   ./  3  2  1     │      │      6  7  8  _ │
+ *  ╰────────╮  _  _  _ │      │ shf alt _ ╭─────╯
+ *           ╰──────────╯      ╰───────────╯
+ */
+            display-name = "Num";
+
+            bindings = <
+ &trans &kp F11  &ht_long F5 N5  &ht_long F4 N4 &trans /* */ &trans &ht_long F9 N9  &ht_long F10 N0 &kp F12 &trans
+ &ht_npi FSLH DOT  &ht_long F3 N3  &ht_long F2 N2  &ht_long F1 N1 /* */ &ht_long F6 N6   &ht_long F7 N7  &ht_long F8 N8  &kp RGUI
+ &none &trans &trans /* */ &kp RSHFT &kp RALT &none
+            >;
+
+            label = "Num";
         };
 
         VIMNAV {
@@ -623,3 +722,4 @@
 /* 21 : GP12 */
 /* 22 : GP13 */
 /* 23 : GP14 */
+
