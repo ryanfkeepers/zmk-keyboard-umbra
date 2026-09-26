@@ -28,6 +28,7 @@
  */
 
 #define DEF 0
+#define ALPHA 0
 #define ALPHA2 1
 #define SYM 2
 #define NUM 3
@@ -36,11 +37,6 @@
 
 / {
     behaviors {
-
-        // Layer tap dance behaviors
-
-        ZMK_TD_LAYER(td_LAYER_Sym, SYM)
-        ZMK_TD_LAYER(td_LAYER_Num, NUM)
 
         // hold for qu, tap for kp
         ht_qu: ht_qu {
@@ -244,18 +240,16 @@
         // y
         combo_whai {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <14 16>;
             bindings = <&ht_ey 0 Y>;
-            layers = <LAYER_Alpha>;
             require-prior-idle-ms = <50>;
         };
 
         // w
         combo_doubleeew {
             timeout-ms = <50>;
-            key-positions = <12 13>;
+            key-positions = <11 13>;
             bindings = <&ht_wh 0 W>;
-            layers = <LAYER_Alpha>;
             require-prior-idle-ms = <50>;
         };
 
@@ -263,7 +257,7 @@
             timeout-ms = <50>;
             key-positions = <8 17>;
             bindings = <&nvim_win_up>;
-            layers = <LAYER_Alpha>;
+            layers = <ALPHA>;
             require-prior-idle-ms = <350>;
         };
 
@@ -271,7 +265,7 @@
             timeout-ms = <50>;
             key-positions = <6 17>;
             bindings = <&nvim_win_r>;
-            layers = <LAYER_Alpha>;
+            layers = <ALPHA>;
             require-prior-idle-ms = <350>;
         };
 
@@ -279,7 +273,7 @@
             timeout-ms = <50>;
             key-positions = <10 3>;
             bindings = <&nvim_win_l>;
-            layers = <LAYER_Alpha>;
+            layers = <ALPHA>;
             require-prior-idle-ms = <350>;
         };
 
@@ -287,7 +281,7 @@
             timeout-ms = <50>;
             key-positions = <10 1>;
             bindings = <&nvim_win_dn>;
-            layers = <LAYER_Alpha>;
+            layers = <ALPHA>;
             require-prior-idle-ms = <350>;
         };
     };
@@ -627,7 +621,7 @@
  *  ╰────────╮  _   _   _ │      │ shf alt  _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
-            display-name = "Sym";
+            display-name = "Symbols";
 
             bindings = <
  &trans &ht_npi LS(EQUAL) EQUAL  &ht_npi LS(MINUS) MINUS   &kp RET &trans /* */ &trans &ht_npi LBKT LS(N9)  &ht_npi RBKT LS(N0)  &ht_npi LS(SEMI) SEMI &trans
@@ -646,7 +640,7 @@
  *  ╰────────╮  _  _  _ │      │ shf alt _ ╭─────╯
  *           ╰──────────╯      ╰───────────╯
  */
-            display-name = "Num";
+            display-name = "Numbers";
 
             bindings = <
  &trans &kp F11  &ht_long F5 N5  &ht_long F4 N4 &trans /* */ &trans &ht_long F9 N9  &ht_long F10 N0 &kp F12 &trans
@@ -665,7 +659,7 @@
  *  ╰────────╮  _ WIN  _  │      │  _   _   _ ╭───────╯
  *           ╰────────────╯      ╰────────────╯
  */
-            display-name = "VimNav";
+            display-name = "VimNavigation";
 
             bindings = <
  &none &kp LS(LG(LBKT)) &kp LG(LS(SPACE)) &kp LS(RG(RBKT)) &trans /* */ &trans &kp LS(N5) &kp LC(D) &kp LC(U) &trans
@@ -684,6 +678,8 @@
  *  ╰────────╮  _   _   _ │      │  _   _   _ ╭────────╯
  *           ╰────────────╯      ╰────────────╯
  */
+            display-name = "WindowControls";
+
             bindings = <
  &none &kp LA(LS(MINUS)) &kp LA(LS(H)) &kp LA(LS(J)) &none /* */ &none &kp LA(LS(K)) &kp LA(LS(L)) &kp LA(LS(EQUAL)) &none
  &sk LC(LA(LG(LSHFT))) &none &nvim_win_left &nvim_win_dn /* */ &nvim_win_up &nvim_win_right &none &none
